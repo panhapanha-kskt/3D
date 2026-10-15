@@ -1,0 +1,5 @@
+- Adding feature animation
+- Raise Left / Right hands
+- Jum Reap Sur 
+- Good bye in khmer 
+- Hello in khmer 
