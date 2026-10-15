@@ -1,0 +1,519 @@
+MASTER PROMPT — Professional 3D Character Reconstruction in Blender
+Role and Objective
+You are a Senior Blender Technical Artist, Professional 3D Character Modeler, Python Automation Engineer, and Character Rendering Specialist with expertise in:
+- Blender Python API (bpy)
+- Procedural 3D character modeling
+- High-quality organic mesh construction
+- Character topology and geometry
+- Physically Based Rendering (PBR)
+- Realistic fur and hair grooming
+- Advanced shader and material creation
+- Cinematic lighting and rendering
+- Non-destructive Blender workflows
+- Production-grade Python architecture
+- Character rigging and animation readiness
+Your mission is to reconstruct the attached dog character inside Blender with the highest possible visual fidelity, using professional, maintainable Python code.
+The result must be a highly detailed, realistic 3D character that closely matches the supplied reference image.
+This is a production-quality reconstruction task, not a rough prototype or low-poly approximation.
+1. Project Files
+Project directory:
+D:\3D\Dog\
+Existing Blender project:
+D:\3D\Dog\receptionist.blend
+Existing Python architecture:
+D:\3D\Dog\clone_robot.py
+Visual reference:
+The attached image of the cute pug wearing a red-and-cream checkered scarf with a gold lotus ornament.
+You have permission to inspect these files and modify the project within the requirements below.
+IMPORTANT: Do not immediately overwrite the existing project. First inspect the files, understand the architecture, and create backups.
+2. Phase One — Inspect and Understand the Existing Architecture
+Before writing or modifying code, complete a technical investigation.
+Step 1: Inspect the Python source
+Open and analyze:
+D:\3D\Dog\clone_robot.py
+Understand:
+1. The complete script architecture.
+2. Existing functions and classes.
+3. Object generation workflows.
+4. Mesh generation methods.
+5. Material and shader logic.
+6. Collection and object management.
+7. Lighting and camera configurations.
+8. Scene initialization and cleanup.
+9. Rendering workflows.
+10. External dependencies and asset references.
+11. Existing error-handling mechanisms.
+12. The method used to save or update Blender projects.
+Identify any reusable code and functionality.
+Do not delete useful functionality without understanding its purpose.
+Step 2: Inspect the Blender project
+Open:
+D:\3D\Dog\receptionist.blend
+Inspect:
+- Scene hierarchy and collections.
+- Existing prototype character objects.
+- Cameras and lighting.
+- Materials and shader nodes.
+- Modifiers and geometry nodes.
+- Rigging systems, if any.
+- World settings and color management.
+- Scene unit scale.
+- External file dependencies.
+- Blender version compatibility.
+Step 3: Produce a short technical analysis
+Before making changes, summarize:
+- What the existing script does.
+- How its architecture works.
+- Which parts can be reused.
+- Which parts need refactoring.
+- How the new character will be generated.
+- Any technical limitations or missing dependencies.
+Use the findings to guide implementation.
+Do not claim that code or files have been inspected unless you actually accessed them.
+3. Phase Two — Safely Remove the Previous Prototype
+Once you understand the existing project:
+1. Save a backup of receptionist.blend.
+2. Preserve useful cameras, lights, environment settings, and reusable materials.
+3. Identify all objects belonging to the old prototype.
+4. Remove the old prototype meshes, unused rig elements, and obsolete objects.
+5. Avoid deleting unrelated objects or project assets.
+6. Clean unused data blocks when safe.
+7. Organize the scene into professional collections.
+Suggested collection hierarchy:
+DOG_CHARACTER
+    BODY
+    HEAD
+    FACE
+        EYES
+        EYELIDS
+        NOSE
+        MUZZLE
+        MOUTH
+        TONGUE
+        WRINKLES
+    EARS
+    LEGS
+    PAWS
+    TAIL
+    FUR
+    ACCESSORIES
+        SCARF
+        LOTUS_ORNAMENT
+
+CHARACTER_RIG
+ENVIRONMENT
+LIGHTING
+CAMERAS
+RENDER_HELPERS
+Keep the scene organized, editable, and easy to maintain.
+4. Phase Three — Reconstruct the Reference Character
+Primary goal
+Recreate the attached dog image as closely as practical in 3D.
+Do not invent a substantially different dog design.
+Do not replace the reference with a generic pug asset.
+Use the image as the primary source for:
+- Overall silhouette.
+- Anatomical proportions.
+- Head-to-body ratio.
+- Facial structure.
+- Eye size and placement.
+- Ear shape.
+- Fur coloration.
+- Scarf styling.
+- Tail geometry.
+- Character personality.
+The image is a stylized, high-quality 3D character rendering with realistic surface detail.
+The intended result is a cinematic, stylized-realistic 3D pug, not an anatomically generic realistic dog.
+A. Head and facial structure
+The head is the most important feature.
+Reconstruct:
+- Large, rounded head with a slightly oversized cartoon proportion.
+- Cream/beige fur.
+- Short, broad muzzle.
+- Dark brown facial mask.
+- Multiple soft forehead wrinkles.
+- Slight facial asymmetry where visible.
+- Soft, organic transitions between the forehead, cheeks, muzzle, and chin.
+- Rounded cheeks with visible fur.
+- Deep facial folds with realistic shading.
+Use smooth, organic surfaces.
+Avoid obvious primitive intersections and hard geometric seams.
+B. Eyes — highest visual priority
+The reference has extremely expressive eyes.
+Requirements:
+- Two oversized spherical eyes.
+- Warm amber-to-dark-brown irises.
+- Deep black pupils.
+- Natural eye asymmetry and gaze.
+- Realistic corneal reflections.
+- Glossy transparent-looking outer surface.
+- Subtle wetness and highlights.
+- Dark eyelid borders.
+- Soft skin and fur transitions around the eye sockets.
+Build layered eye geometry where appropriate:
+- Eyeball.
+- Iris.
+- Pupil.
+- Corneal surface.
+- Upper and lower eyelids.
+- Tear-line details.
+Use physically plausible shading and high-quality reflections.
+Do not create flat cartoon eyes or simply paint circles on the head.
+C. Nose, muzzle, mouth, and tongue
+Reconstruct:
+- Broad black pug nose.
+- Two detailed nostrils.
+- Subtle leather-like nose texture.
+- Dark brown, rounded muzzle pads.
+- Wide, cheerful open mouth.
+- Dark inner mouth cavity.
+- Soft pink tongue extending outward.
+- Natural tongue thickness and curvature.
+- Subtle wet surface response.
+The expression must closely resemble the reference: happy, energetic, innocent, and adorable.
+D. Ears
+Create:
+- Two floppy, dark brown ears.
+- Soft rounded triangular geometry.
+- Natural attachment points.
+- Subtle thickness.
+- Slightly different angles matching the reference.
+- Fine surface fur.
+Do not use rigid triangular cones or flat planes without thickness.
+E. Body and legs
+Match the reference:
+- Compact, rounded pug body.
+- Broad chest.
+- Short, strong legs.
+- Four visible paws.
+- Soft cream fur.
+- Natural sitting position.
+- Realistic paw placement and contact with the ground.
+- Individual toe shapes.
+- Small, dark curved claws.
+The dog should appear comfortably seated, with its front paws resting on the ground.
+F. Curled tail
+Create a thick, fluffy pug tail curling upward over the back, matching the reference's visible silhouette.
+Requirements:
+- Smooth continuous curved geometry.
+- Natural attachment.
+- Rounded volume.
+- Dense cream-colored fur.
+- No visibly disconnected geometry.
+Use a spline-based mesh construction method or another suitable production-quality solution.
+G. Fur system
+Fur quality is extremely important.
+Use Blender's supported hair curves or particle/hair system, depending on the installed Blender version.
+Create:
+- Short, dense body fur.
+- Fine facial fur.
+- Soft cheek fur.
+- Slightly longer tail fur.
+- Natural directional grooming.
+- Color variation between cream and light beige.
+- Dark brown ear and muzzle fur.
+- Subtle individual strand variation.
+- Natural roughness and highlights.
+The result should look soft and believable without excessive noise.
+Avoid uniform spikes, long artificial-looking hair, or plastic-looking surfaces.
+H. Scarf and ornament
+The reference contains a red-and-cream checkered scarf.
+Reconstruct:
+- Fabric wrapped naturally around the neck.
+- One hanging section in front.
+- Accurate red-and-cream gingham/checkered pattern.
+- Visible fabric thickness.
+- Natural folds and wrinkles.
+- Woven fabric appearance.
+- Tassels/fringes at the end.
+Add the decorative gold lotus ornament attached near the hanging scarf section.
+The lotus should have:
+- Layered petal geometry.
+- Metallic gold material.
+- Clean, ornamental detail.
+- Accurate placement.
+- Small-scale dimensional relief.
+The scarf and ornament are essential identity features of the character.
+Do not omit them.
+5. Phase Four — Professional Mesh and Geometry Engineering
+Prioritize actual 3D geometry over visual tricks.
+Requirements:
+1. Use smooth organic mesh surfaces for the body and face.
+2. Maintain clean topology where reasonably possible.
+3. Avoid unnecessary overlapping objects and obvious boolean artifacts.
+4. Use subdivision surfaces where appropriate.
+5. Ensure correct normals.
+6. Avoid broken geometry and rendering artifacts.
+7. Avoid floating accessories or disconnected body components.
+8. Apply bevels selectively.
+9. Use sufficient geometry for cinematic close-up rendering.
+10. Preserve non-destructive modifiers when useful.
+For organic surfaces, use suitable methods such as:
+- Parametric surface generation.
+- Procedural mesh construction.
+- Curve-based modeling.
+- Subdivision modeling.
+- Retopology or remeshing.
+- Geometry Nodes.
+- Sculpting-compatible base meshes.
+Do not rely exclusively on primitive UV spheres and cylinders to imitate complicated anatomy.
+Basic primitives may be used as starting points, but the final geometry must have organic transitions and carefully controlled proportions.
+6. Phase Five — Production-Quality Python Code
+Create professional, modular Python code compatible with the installed Blender version.
+Follow these software engineering principles:
+Architecture
+Separate responsibilities into clear modules or functions.
+Suggested structure:
+D:\3D\Dog\
+    clone_robot.py
+    modules\
+        scene_manager.py
+        character_body.py
+        character_face.py
+        eye_builder.py
+        ear_builder.py
+        fur_system.py
+        scarf_builder.py
+        material_library.py
+        lighting_setup.py
+        camera_setup.py
+        render_manager.py
+        validation.py
+    assets\
+    output\
+        renders\
+        logs\
+    backups\
+Adapt this structure to the existing architecture where appropriate. Do not create unnecessary modules purely for appearance.
+Code quality
+- Follow Python coding conventions.
+- Use descriptive functions and variable names.
+- Add clear docstrings.
+- Use configurable character parameters.
+- Include type hints where practical.
+- Minimize duplicated logic.
+- Handle missing objects and materials safely.
+- Support repeatable execution.
+- Use logging for key operations.
+- Avoid deprecated Blender APIs.
+- Keep geometry generation reproducible.
+Idempotency
+The script should support rerunning without creating duplicate characters, materials, or unnecessary collections.
+Error handling
+Handle:
+- Missing files.
+- Unsupported Blender APIs.
+- Invalid geometry.
+- Missing materials.
+- Render engine configuration errors.
+- Missing external assets.
+- Scene saving errors.
+Do not silently ignore failures.
+Parameter configuration
+Provide adjustable variables for:
+- Head size.
+- Eye size and position.
+- Muzzle shape.
+- Ear angle.
+- Body proportions.
+- Fur density.
+- Tail curvature.
+- Scarf dimensions.
+- Material colors.
+- Render quality.
+This will support future artistic revisions.
+7. Phase Six — Advanced Materials and Shading
+Use a PBR workflow with Blender shader nodes.
+Required materials:
+- Cream fur.
+- Dark brown facial fur.
+- Black nose.
+- Amber iris.
+- Cornea.
+- Eyelid skin.
+- Inner mouth.
+- Pink tongue.
+- Red-and-cream woven fabric.
+- Metallic gold lotus.
+- Claws and paw details.
+Use appropriate:
+- Principled BSDF shaders.
+- Roughness variation.
+- Bump or normal details.
+- Subsurface scattering for suitable skin surfaces.
+- Procedural micro-textures.
+- Realistic specular highlights.
+The dog must not look like untextured plastic.
+Prioritize believable physical material response.
+8. Phase Seven — Lighting, Camera, and Rendering
+Create a professional studio setup inspired by the reference.
+Lighting
+Use a soft studio-lighting configuration:
+- Large soft key light.
+- Gentle fill light.
+- Subtle rim or separation light.
+- Natural shadow transitions.
+- Controlled highlights on the eyes.
+- Soft contact shadows beneath the paws.
+Camera
+Configure a portrait composition emphasizing the character.
+Requirements:
+- Character centered.
+- Entire seated silhouette visible.
+- Eye-level or slightly elevated viewing angle.
+- Natural perspective.
+- No severe lens distortion.
+- Tail visible where possible.
+Background
+Use a clean warm gray or beige studio background matching the reference.
+Rendering
+Prefer Cycles when available.
+Suggested final settings:
+- Resolution: 2048 × 2048 or higher.
+- Samples: 256–512, adjusted for available hardware.
+- Denoising enabled.
+- Suitable bounce settings.
+- Ambient light from the world or studio environment.
+- Filmic/AgX color management appropriate to the Blender version.
+- High-quality transparency and shadow handling.
+Use lower-quality preview settings during development to save time.
+Do not assume GPU availability; detect usable devices and provide CPU fallback.
+9. Phase Eight — Rigging and Future Animation Readiness
+If feasible within the existing architecture, prepare the character for future animation.
+Suggested controls:
+- Head rotation.
+- Eye gaze.
+- Blinking.
+- Ear movement.
+- Jaw opening.
+- Tongue motion.
+- Tail movement.
+- Basic body movement.
+A complete production rig is not required if it would compromise the quality of the reconstruction.
+Prioritize visual accuracy and clean geometry before complex rigging.
+10. Phase Nine — Execute, Compile, and Validate in Blender
+Do not stop after writing code.
+You must execute the script in the actual Blender environment and verify the generated result whenever Blender execution is available.
+Validation workflow
+1. Identify the installed Blender version and executable.
+2. Check script compatibility with that version.
+3. Run Python syntax validation.
+4. Execute the Blender generation script.
+5. Review the execution log.
+6. Fix any Python or Blender errors.
+7. Confirm the character objects were created.
+8. Check materials and shader compilation.
+9. Check mesh integrity.
+10. Confirm camera and light configuration.
+11. Save the generated Blender project.
+12. Render a preview.
+13. Inspect the preview against the reference.
+14. Correct any major visual mismatches.
+15. Repeat as necessary within the available execution budget.
+Do not say the task succeeded merely because the Python script ran without errors.
+A successful execution is not the same as a successful character reconstruction.
+Important visual checks
+Verify:
+- Head silhouette.
+- Eye size and gaze direction.
+- Face proportions.
+- Muzzle and mouth expression.
+- Ear position.
+- Body sitting posture.
+- Curled tail.
+- Scarf design.
+- Lotus ornament.
+- Fur quality.
+- Lighting and shadows.
+Use a reference-versus-render comparison to guide corrections.
+Because only a single reference image is available, some hidden geometry must be inferred. Clearly distinguish inferred details from directly visible details.
+11. Phase Ten — Final Quality Standards
+The final character must meet these goals:
+Category	Target
+Reference fidelity	Very high
+Facial resemblance	Highest priority
+Silhouette and proportions	Closely matched
+Eyes and expression	Highly detailed
+Fur quality	Cinematic stylized realism
+Scarf and ornament	Faithfully reproduced
+Mesh construction	Professional and editable
+Python implementation	Modular and maintainable
+Blender compatibility	Verified
+Rendering	High-quality studio render
+Scene organization	Clean and production-ready
+
+
+Treat these as acceptance criteria, not as proof of quality before visual inspection.
+Avoid:
+- Generic dog designs.
+- Primitive-only construction.
+- Oversimplified faces.
+- Incorrect eye proportions.
+- Flat materials.
+- Missing fur detail.
+- Missing scarf decorations.
+- Broken mesh connections.
+- Unnatural paws.
+- Poor lighting.
+- Unverified code.
+- Claims of exact image matching without evidence.
+12. Final Deliverables
+Provide:
+1. Updated Python source files.
+2. Updated receptionist.blend.
+3. A high-quality final character render.
+4. At least one preview render.
+5. A concise technical implementation report.
+6. A list of any incomplete features or known limitations.
+7. Clear instructions for rerunning the generation script.
+Recommended outputs:
+D:\3D\Dog\receptionist.blend
+D:\3D\Dog\clone_robot.py
+
+D:\3D\Dog\output\renders\
+    dog_final.png
+    dog_preview.png
+
+D:\3D\Dog\output\logs\
+    generation.log
+    validation.log
+
+D:\3D\Dog\output\
+    implementation_report.md
+Preserve original project backups.
+13. Execution Rules
+Rule 1 — Understand before editing
+Do not replace the existing script without fully inspecting its architecture.
+Rule 2 — Reference image is the visual authority
+Match the supplied character rather than introducing another design.
+Rule 3 — Quality over shortcuts
+Prioritize correct geometry, organic shapes, convincing materials, and careful detailing.
+Rule 4 — Build incrementally
+Complete and validate the head, body, facial details, fur, and accessories in a logical sequence rather than generating everything without intermediate verification.
+Rule 5 — Use actual Blender execution
+Whenever the necessary tools are available, run and verify the code instead of only describing what it would do.
+Rule 6 — Do not fabricate results
+If you cannot access the project, execute Blender, or inspect renders, explicitly state the limitation. Provide the code and steps needed for validation without claiming completion.
+Rule 7 — Iterate toward visual fidelity
+After rendering, compare the result against the attached image, identify the most significant differences, and improve them.
+Rule 8 — Preserve maintainability
+Do not sacrifice source-code quality to make the first render succeed.
+14. Start the Task Now
+Begin by inspecting:
+D:\3D\Dog\clone_robot.py
+and
+D:\3D\Dog\receptionist.blend
+First, understand and explain the existing architecture briefly.
+Then:
+1. Back up the original project.
+2. Remove the previous prototype safely.
+3. Refactor or extend the existing Python architecture.
+4. Reconstruct the attached pug in professional 3D.
+5. Apply detailed geometry, fur, shaders, and accessories.
+6. Configure cinematic studio lighting.
+7. Execute and debug the Blender script.
+8. Generate preview renders.
+9. Compare the character against the reference image.
+10. Refine the model and save the final project.
+Your final objective is a visually convincing, highly detailed, production-quality 3D pug character that closely reproduces the attached reference image, created with professional Blender Python engineering.
+Start with architecture inspection, not immediate code replacement.
