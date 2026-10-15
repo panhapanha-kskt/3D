@@ -18,18 +18,18 @@ Pixel-perfect identity from one image is not realistic. The target is: **same si
 |---|---|
 | Project folder | `D:\3D\Dog\` |
 | Blender project | `D:\3D\Dog\receptionist.blend` |
-| Existing script | `D:\3D\Dog\clone_robot.py` |
+| Existing script | `D:\3D\Dog\pug_avatar_builder.py` |
 | Reference image | `D:\3D\Dog\assets\reference.png` (place the pug image here) |
 | Optional base mesh | `D:\3D\Dog\assets\base_mesh.glb` (only if provided, e.g. from an image-to-3D tool) |
 
-Back up `receptionist.blend` and `clone_robot.py` into `D:\3D\Dog\backups\` with a timestamp **before** changing anything.
+Back up `receptionist.blend` and `pug_avatar_builder.py` into `D:\3D\Dog\backups\` with a timestamp **before** changing anything.
 
 ---
 
 ## 2. Phase 1 — Inspect Before Editing
 
 1. Find the installed Blender executable and version (e.g. `C:\Program Files\Blender Foundation\Blender 4.x\blender.exe`). All code must target that version.
-2. Read `clone_robot.py` fully: structure, mesh generation, materials, collections, camera and lights, render and save logic, error handling.
+2. Read `pug_avatar_builder.py` fully: structure, mesh generation, materials, collections, camera and lights, render and save logic, error handling.
 3. Inspect `receptionist.blend` headless (`blender -b receptionist.blend --python-expr ...`): collections, objects, materials, modifiers, world, color management, unit scale.
 4. Write a short analysis (max ~15 lines): what exists, what to reuse, what to replace, and the plan.
 
@@ -276,11 +276,11 @@ Do not compromise the reconstruction quality for rigging.
 
 ## 11. Code Requirements
 
-Adapt to the existing `clone_robot.py` structure where it makes sense. Suggested layout:
+Adapt to the existing `pug_avatar_builder.py` structure where it makes sense. Suggested layout:
 
 ```
 D:\3D\Dog\
-  clone_robot.py          # entry point: runs the full pipeline
+  pug_avatar_builder.py          # entry point: runs the full pipeline
   config.py               # ALL tweakable parameters (proportions, sculpt strokes, colors, fur, render)
   modules\
     scene_manager.py      # backup, cleanup, collections, save
@@ -308,7 +308,7 @@ Requirements:
 **Run command:**
 
 ```
-"C:\Program Files\Blender Foundation\Blender 4.x\blender.exe" -b D:\3D\Dog\receptionist.blend --python D:\3D\Dog\clone_robot.py -- --preview
+"C:\Program Files\Blender Foundation\Blender 4.x\blender.exe" -b D:\3D\Dog\receptionist.blend --python D:\3D\Dog\pug_avatar_builder.py -- --preview
 ```
 
 ---
@@ -339,4 +339,4 @@ Requirements:
 5. Never fabricate renders, scores or "it matches" claims.
 6. Keep the code clean and configurable. Visual fixes go into `config.py` values, not hacks.
 
-**Start now with Phase 1: inspect `clone_robot.py` and `receptionist.blend`, then report your analysis and plan.**
+**Start now with Phase 1: inspect `pug_avatar_builder.py` and `receptionist.blend`, then report your analysis and plan.**
